@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#define MAX_LEN_STR 50
+//estructuras para jugador
+typedef struct {//estructura de nodo general
+    int id;
+    char name[MAX_LEN_STR];
+    char nickname[MAX_LEN_STR];
+    int age;// que tanto es necesario?
+    int points;                /* Victorias acumuladas */
+    char character[MAX_LEN_STR];
+} Player;
+
+typedef struct PlayerNode {
+    Player player;
+    struct PlayerNode *next;
+    struct PlayerNode *prev;
+} PlayerNode;
+
+//Lista de personajes
+typedef struct {
+    char name[MAX_LEN_STR];
+    int victories;
+} Characters;
+
+typedef struct CharacterNode {
+    Characters character;
+    struct CharacterNode *next;
+    struct CharacterNode *prev;
+} CharacterNode;
